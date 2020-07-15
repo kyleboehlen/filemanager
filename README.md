@@ -120,3 +120,10 @@ Optimize route loading
    `php artisan route:cache`
 
 <br/><br/>
+
+## Notes
+
+### Auth
+You'll notice this app just uses the basic Laravel auth defaults, I prefer not to use bootstrap styles as I think writing custom sass is much cleaner but hey styling all the templates would add hours to the test so... it is what it is. I'd be happy to show you examples of this on a personal codbase.
+
+It also uses Vue, which I haven't used, again it's just the default for Laravel. I've wanted to learn Vue or Angular but my freetime has been spent on a personal codebase that hasn't needed to do anything client side so I havne't been able to justify it yet.

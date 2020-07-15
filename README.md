@@ -123,7 +123,22 @@ Optimize route loading
 
 ## Notes
 
+### Requirements
+- [ ] Allow uploading and persisting .jpg and .mp4 files
+- [ ] Show a UI where users can upload new files, and show the list of files uploaded so far
+- [ ] Provide a way to "preview" the uploaded files.  For images, we want to see the image, and for mp4's, play the video
+- [ ] Write basic tests for your code, and document a way to run them
+
+### Extra Requirements
+- [x] Add a login mechanism, and allow each user to have their own list of files (see Auth)
+- [ ] Add a way to associate a title, description and tags with a file and have those changes persist. Allow for filtering the list of files with search terms that can match these new fields
+- [x] Use a responsive layout that works and looks great on desktops and mobile devices (see Responsive Design)
+- [ ] Add player controls when previewing mp4 files.
+
 ### Auth
 You'll notice this app just uses the basic Laravel auth defaults, I prefer not to use bootstrap styles as I think writing custom sass is much cleaner but hey styling all the templates would add hours to the test so... it is what it is. I'd be happy to show you examples of this on a personal codbase.
 
 It also uses Vue, which I haven't used, again it's just the default for Laravel. I've wanted to learn Vue or Angular but my freetime has been spent on a personal codebase that hasn't needed to do anything client side so I havne't been able to justify it yet.
+
+### Responsive Design
+As I mentioned above in Auth, the site is styled with bootstrap so it is already responsive. That being said, I prefer to write my styles with custom sass and would be happy to show you examples of responsive design in a personal codebase.

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// Requests
+use App\Http\Requests\Upload\CreateRequest;
+
 class UploadController extends Controller
 {
     /**
@@ -19,5 +22,10 @@ class UploadController extends Controller
     public function index()
     {
         return view('upload');
+    }
+
+    public function create(CreateRequest $request)
+    {
+        return 'validated';
     }
 }

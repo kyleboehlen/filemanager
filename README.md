@@ -9,7 +9,6 @@ Before installing verify your system has the following requirements:
 - git
 - composer (added to the PATH)
 - npm
-- phpunit (or just use the vendor installation)
 
 <br/>
 Start by cloning into the repository
@@ -85,16 +84,9 @@ Create a nysql database and create a new user to grant all privliages to the dat
 - DB_PASSWORD=
 
 <br/>
-Run the deployment for the migrations, seeds, etc.
+Run the deployment for the migrations, seeds, etc. If you have a global install of phpunit it's probably going to error out, use the Laravel install.
 
-`cd /var/www/html/filemanager && phpunit --filter Deploy`
-
-If the global install of phpunit does not work, is not installed, or throws an error use app local one
-
-`vendor/phpunit/phpunit/phpunit --filter Deploy`
-
-Or if you wanna be really big brain, just alias it
-`alias vendor_phpunit=vendor/phpunit/phpunit/phpunit && vendor_phpunit --filter Deploy`
+`cd /var/www/html/filemanager && alias vendor_phpunit=vendor/phpunit/phpunit/phpunit && vendor_phpunit --testsuite Deploy`
 
 <br/>
 Change the php.ini file to let Laravel handle file upload sizes (if desired)
@@ -127,7 +119,7 @@ Optimize route loading
 - [ ] Allow uploading and persisting .jpg and .mp4 files
 - [ ] Show a UI where users can upload new files, and show the list of files uploaded so far
 - [ ] Provide a way to "preview" the uploaded files. For images, we want to see the image, and for mp4's, play the video
-- [ ] Write basic tests for your code, and document a way to run them
+- [ ] Write basic tests for your code, and document a way to run them (see Testing)
 
 ### Extra Requirements
 - [x] Add a login mechanism, and allow each user to have their own list of files (see Auth)
@@ -146,3 +138,10 @@ As I mentioned above in Auth, the site is styled with bootstrap so it is already
 
 ### Tags
 I utilized the boostrap-tagsinput jQuery plugin for this
+
+### Testing
+To make validation testing in the upload easier I used the trait packaged in jasonmccreary/laravel-test-assertions. Unit tests can be ran using the laravel install of phpunit using
+
+`vendor_phpunit --testsuite Unit`
+
+You did alias it... right?

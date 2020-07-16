@@ -28,7 +28,7 @@ class Tags implements Rule
         $tags = explode(',', $value); // boostrap-tagsinput sends tags comma delimited by default
         foreach($tags as $tag)
         {
-            if(strlen($tag) > 25) // Verify none of the tags are too long to fit in a varchar(255) column
+            if(strlen($tag) > 255) // Verify none of the tags are too long to fit in a varchar(255) column
             {
                 $this->failed_tag = $tag;
                 return false;

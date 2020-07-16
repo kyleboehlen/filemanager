@@ -24,5 +24,7 @@ class DeployTest extends TestCase
         $this->assertTrue(Schema::hasTable('users'));
         $this->assertTrue(Schema::hasTable('password_resets'));
         $this->assertTrue(Schema::hasTable('failed_jobs'));
+        $this->assertTrue(Schema::hasTable('files'));
+        $this->assertTrue(Schema::hasTable('tags'));
     }
 }

@@ -19,7 +19,7 @@ Start by cloning into the repository
 <br/>
 Change the ownership and permissions
 
-`sudo chown -R www-data:{your_user_group} filemanager && sudo chmod -R 775 filemanger`
+`sudo chown -R www-data:{your_user_group} filemanager && sudo chmod -R 775 filemanager`
 
 <br/>
 Install the required depdendencies

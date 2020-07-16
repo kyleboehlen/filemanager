@@ -21,8 +21,8 @@
                         </div>
                         <div class="form-group">
                           <label for="file">File</label>
-                          <input type="file" id="file">
-                          <p class="help-block">(.mp3 and .mp4 file types are supported)</p>
+                          <input type="file" id="file" accept="{{ implode(',', config('accept.file_types')) }}">
+                          <p class="help-block">({{ implode(' and ', config('accept.file_types')) }} file types are supported)</p>
                         </div>
                         <div class="form-group">
                             <label for="tags">Tags</label>

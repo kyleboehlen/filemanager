@@ -116,7 +116,7 @@ Optimize route loading
 ## Notes
 
 ### Requirements
-- [ ] Allow uploading and persisting .jpg and .mp4 files
+- [x] Allow uploading and persisting .jpg and .mp4 files
 - [ ] Show a UI where users can upload new files, and show the list of files uploaded so far
 - [ ] Provide a way to "preview" the uploaded files. For images, we want to see the image, and for mp4's, play the video
 - [ ] Write basic tests for your code, and document a way to run them (see Testing)

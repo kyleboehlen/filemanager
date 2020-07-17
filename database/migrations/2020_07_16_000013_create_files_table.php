@@ -21,7 +21,7 @@ class CreateFilesTable extends Migration
             // Other columns
             $table->string('title');
             $table->text('description');
-            $table->string('ext');
+            $table->string('storage_location');
             $table->bigInteger('users_id')->unsigned();
 
             // Constraints

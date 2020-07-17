@@ -16,10 +16,10 @@ class CreateTagsTable extends Migration
         Schema::create('tags', function (Blueprint $table) {
             // Columns
             $table->bigInteger('files_id')->unsigned();
-            $table->string('tag');
+            $table->string('value');
 
             // Constraints
-            $table->primary(['files_id', 'tag']);
+            $table->primary(['files_id', 'value']);
             $table->foreign('files_id')->references('id')->on('files');
         });
     }

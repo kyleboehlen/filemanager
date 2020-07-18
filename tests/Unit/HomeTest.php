@@ -26,5 +26,6 @@ class HomeTest extends TestCase
         // Create a user, and we should now be able to hit home
         $user = factory(User::class)->create();
         $this->actingAs($user)->get(route('home'))->assertOK();
+        $user->delete();
     }
 }

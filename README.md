@@ -129,12 +129,12 @@ Optimize route loading
 - [ ] Max filesize storage
 
 ### Auth
-You'll notice this app just uses the basic Laravel auth defaults, I prefer not to use bootstrap styles as I think writing custom sass is much cleaner but hey styling all the templates would add hours to the test so... it is what it is. I'd be happy to show you examples of this on a personal codbase.
+You'll notice this app just uses the basic Laravel auth defaults (boostrap and vue). I haven't used bootstrap before, I usually do custom sass, but I can see how it can be useful in something like this or an MVP. I'd be happy to show some custom sass in some personal codebases
 
-It also uses Vue, which I haven't used, again it's just the default for Laravel. I've wanted to learn Vue or Angular but my freetime has been spent on a personal codebase that hasn't needed to do anything client side so I havne't been able to justify it yet.
+I'd really like to learn Vue or Angular as well, had always leaned toward Vue as it was Laravel's default, but I haven't quite had the chance yet with my personal projects.
 
 ### Responsive Design
-As I mentioned above in Auth, the site is styled with bootstrap so it is already responsive. That being said, I prefer to write my styles with custom sass and would be happy to show you examples of responsive design in a personal codebase.
+As I mentioned above in Auth, the site is styled with bootstrap so it is already responsive. Kinda cheating. That being said, I still prefer to write my styles with custom sass in my personal projects and would be happy to show you examples of responsive design in a personal codebase.
 
 ### Tags
 I utilized the boostrap-tagsinput jQuery plugin for this

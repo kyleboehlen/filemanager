@@ -119,7 +119,7 @@ Optimize route loading
 - [x] Allow uploading and persisting .jpg and .mp4 files
 - [ ] Show a UI where users can upload new files, and show the list of files uploaded so far
 - [ ] Provide a way to "preview" the uploaded files. For images, we want to see the image, and for mp4's, play the video
-- [ ] Write basic tests for your code, and document a way to run them (see Testing)
+- [x] Write basic tests for your code, and document a way to run them (see Testing)
 
 ### Extra Requirements
 - [x] Add a login mechanism, and allow each user to have their own list of files (see Auth)

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// Models
+use App\Models\File;
+
 class HomeController extends Controller
 {
     /**
@@ -21,8 +24,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        $user = \Auth::user();
+        $files = File::where('users_id', $user->id);
+           
+        return view('home')->with(['files' => $files->paginate(10)]);
     }
 }

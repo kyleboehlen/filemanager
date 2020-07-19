@@ -31,3 +31,7 @@ Route::prefix('upload')->group(function(){
     Route::get('/', 'UploadController@index')->name('upload');
     Route::post('/', 'UploadController@create')->name('upload.create');
 });
+
+// And here we have the routes that handle previewing files
+Route::get('preview/{slug}', 'PreviewController@index')->name('preview');
+Route::get('media/{slug}', 'MediaController@index')->name('media');

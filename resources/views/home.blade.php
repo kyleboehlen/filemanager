@@ -14,6 +14,33 @@
                         <button type="button" class="btn btn-primary btn-lg">Upload File</button>
                     </a>
                 </div>
+
+                {{-- Files List --}}
+                <table class="table">
+                    <tr>
+                        <th>Title</th>
+                        <th>Date Added</th>
+                        <th>File Type</th>
+                    </tr>
+                    @foreach($files as $file)
+                        <tr>
+                            <td>
+                                <a href="{{ route('preview', ['slug' => $file->slug]) }}">
+                                    {{ $file->title }}
+                                </a>
+                            </td>
+                            <td>{{ $file->created_at->format('n/j/y h:i A') }}</td>
+                            <td>{{ $file->file_type() }}</td>
+                        </tr>
+                    @endforeach
+                </table>
+
+                {{-- Pagination --}}
+                <div class="d-flex">
+                    <div class="mx-auto">
+                        {{ $files->links() }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

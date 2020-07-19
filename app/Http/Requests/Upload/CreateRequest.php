@@ -34,8 +34,8 @@ class CreateRequest extends FormRequest
             // 'description' => '', // descrition is a TEXT field in the DB so no validation really needed
             'file' => "required|mimes:$mimes|max:$max_file_size",
             'tags' => [new Tags],
-            'attr-name' => 'required_with:attribution_url|string|max:255',
-            'attr-url' => 'required_with:attribution_name|url|max:255',
+            'attr-name' => 'required_with:attribution_url|string|max:255|nullable',
+            'attr-url' => 'required_with:attribution_name|url|max:255|nullable',
         ];
     }
 }

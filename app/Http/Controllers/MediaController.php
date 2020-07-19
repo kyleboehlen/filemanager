@@ -33,7 +33,7 @@ class MediaController extends Controller
 
         $file_path = storage_path('app/') . $file->storage_location;
         
-        if($file->file_type() == 'image')
+        if($file->fileType() == 'image')
         {
             return Image::make($file_path)->fit(600, 600)->response();
         }

@@ -30,7 +30,7 @@
                                 </a>
                             </td>
                             <td>{{ $file->created_at->format('n/j/y h:i A') }}</td>
-                            <td>{{ $file->file_type() }}</td>
+                            <td>{{ $file->fileType() }}</td>
                         </tr>
                     @endforeach
                 </table>

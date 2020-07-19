@@ -29,7 +29,7 @@ class File extends Model
      *
      * @return string
      */
-    public function file_type()
+    public function fileType()
     {
         $ext_index = strrpos($this->storage_location, '.');
         $ext = substr($this->storage_location, ++$ext_index); // Get file extension by substringing from the index of the last .

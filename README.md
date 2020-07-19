@@ -127,6 +127,7 @@ Optimize route loading
 - [ ] Allow for filtering the list of files with search terms that can match these new fields (see Tags)
 - [x] Use a responsive layout that works and looks great on desktops and mobile devices (see Responsive Design)
 - [ ] Max filesize storage
+- [ ] Attribution
 
 ### Auth
 You'll notice this app just uses the basic Laravel auth defaults (boostrap and vue). I haven't used bootstrap before, I usually do custom sass, but I can see how it can be useful in something like this or an MVP. I'd be happy to show some custom sass in some personal codebases

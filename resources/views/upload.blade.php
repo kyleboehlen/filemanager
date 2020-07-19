@@ -24,7 +24,7 @@
 
                         <div class="form-group">
                           <label for="title">Title</label>
-                          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Title" value="{{ old('title') }}">
+                          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Title" value="{{ old('title') }}" required>
                         </div>
                         <div class="form-group">
                           <label for="description">Description</label>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                           <label for="file">File</label>
-                          <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file" accept="{{ implode(',', config('accept.file_types')) }}">
+                          <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file" accept="{{ implode(',', config('accept.file_types')) }}" required>
                           <p class="help-block">({{ implode(' and ', config('accept.file_types')) }} file types are supported)</p>
                         </div>
                         <div class="form-group">
@@ -40,7 +40,13 @@
                             <input type="text" class="form-control bootstrap-tagsinput" data-role="tagsinput" id="tags" name="tags" placeholder="tag" value="{{ old('tags') }}">
                             <p class="help-block">(click enter to delimit tags, backspace to delete tags)</p>
                         </div>
-                        <button type="submit" class="btn btn-primary">Upload</button>
+                        <div class="form-group">
+                            <label>Attribution</label>
+                            <input type="text" class="form-control" id="attr-name" name="attr-name" placeholder="Name" value="{{ old('attr-name') }}">
+                            <br/>
+                            <input type="text" class="form-control" id="attr-url" name="attr-url" placeholder="URL" value="{{ old('attr-url') }}">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">Upload File</button>
                     </form>
                 </div>
             </div>

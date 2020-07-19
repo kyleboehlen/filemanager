@@ -18,9 +18,13 @@
                 @else
                     <video controls>
                         <source src="{{ route('media', ['slug' => $file->slug]) }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                        Your browser does not support the video tag.
+                    </video>
                 @endif
+
+                <div class="text-center">
+                    <p>{{ $file->fileType() }} by <a target="_blank" href="{{ $file->attribution_url }}">{{ $file->attribution_name }}</a></p>
+                </div>
             </div>
         </div>
     </div>

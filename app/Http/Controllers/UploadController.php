@@ -50,6 +50,12 @@ class UploadController extends Controller
             'slug' => Str::slug($title . ' ' . uniqid()),
         ]);
 
+        if($request->has('attr-name') && $request->has('attr-url'))
+        {
+            $file_upload->attribution_name = $request->get('attr-name');
+            $file_upload->attribution_url = $request->get('attr-url');
+        }
+
         if(!$file_upload->save())
         {
             // Log error and redirect user back to upload form with their input and error message

@@ -24,6 +24,8 @@ class CreateFilesTable extends Migration
             $table->string('storage_location');
             $table->bigInteger('users_id')->unsigned();
             $table->string('slug')->unique();
+            $table->string('attribution_name')->nullable();
+            $table->string('attribution_url')->nullable();
 
             // Constraints
             $table->foreign('users_id')->references('id')->on('users');

@@ -36,9 +36,26 @@ Create a copy of the enviroment file from the template
 `cp .env.example .env`
 
 <br/>
+Create a nysql database and create a new user to grant all privliages to the database on. Be sure to fill out the DB .env vars
+
+- DB_DATABASE=
+- DB_USERNAME=
+- DB_PASSWORD=
+
+<br/>
 Generate the application encryption key
 
 `php artisan key:generate`
+
+<br/>
+Cache the configuration
+
+   `php artisan config:cache`
+
+<br/>
+Dump Composer Autoload
+
+   `composer dump-autoload`
 
 <br/>
 Change the apache2 webroot to the laravel public folder
@@ -77,11 +94,9 @@ In order to allow laravel to handle URLs, make sure the apache mod_rewrite exten
    `sudo service apache2 restart`
 
 <br/>
-Create a nysql database and create a new user to grant all privliages to the database on. Be sure to fill out the DB .env vars
+Change the ownership and permissions again now that all the dependencies are installed and what not
 
-- DB_DATABASE=
-- DB_USERNAME=
-- DB_PASSWORD=
+`cd /var/www/html && sudo chown -R www-data:{your_user_group} filemanager && sudo chmod -R 775 filemanager`
 
 <br/>
 Run the deployment for the migrations, seeds, etc. If you have a global install of phpunit it's probably going to error out, use the Laravel install.
@@ -95,24 +110,6 @@ Change the php.ini file to let Laravel handle file upload sizes (if desired)
 `post_max_size = 0`
 
 <br/><br/>
-### _Make sure these steps are completed last_ 
-
-Optimize the autoloader class
-
-   `composer install --optimize-autoloader --no-dev`
-
-<br/>
-Cache the configuration
-
-   `php artisan config:cache`
-
-
-Optimize route loading
-
-   `php artisan route:cache`
-
-<br/><br/>
-
 ## Notes
 
 ### Requirements

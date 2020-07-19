@@ -20,7 +20,7 @@ class CreateFilesTable extends Migration
 
             // Other columns
             $table->string('title');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('storage_location');
             $table->bigInteger('users_id')->unsigned();
             $table->string('slug')->unique();

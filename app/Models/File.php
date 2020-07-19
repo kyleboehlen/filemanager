@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+// Models
+use App\Models\Tag;
+
 class File extends Model
 {
     /**
@@ -34,5 +37,10 @@ class File extends Model
         $ext_index = strrpos($this->storage_location, '.');
         $ext = substr($this->storage_location, ++$ext_index); // Get file extension by substringing from the index of the last .
         return $ext == 'mp4' ? 'video' : 'image'; // mp4s are supported for video, rest of the supported files are images.
+    }
+
+    public function tags()
+    {
+        return $this->hasMany(Tag::class, 'files_id');
     }
 }

@@ -118,7 +118,7 @@ Optimize route loading
 ### Requirements
 - [x] Allow uploading and persisting .jpg and .mp4 files
 - [x] Show a UI where users can upload new files, and show the list of files uploaded so far
-- [ ] Provide a way to "preview" the uploaded files. For images, we want to see the image, and for mp4's, play the video
+- [x] Provide a way to "preview" the uploaded files. For images, we want to see the image, and for mp4's, play the video
 - [x] Write basic tests for your code, and document a way to run them (see Testing)
 
 ### Extra Requirements
@@ -135,7 +135,7 @@ You'll notice this app just uses the basic Laravel auth defaults (boostrap and v
 I'd really like to learn Vue or Angular as well, had always leaned toward Vue as it was Laravel's default, but I haven't quite had the chance yet with my personal projects.
 
 ### Responsive Design
-As I mentioned above in Auth, the site is styled with bootstrap so it is already responsive. Kinda cheating. That being said, I still prefer to write my styles with custom sass in my personal projects and would be happy to show you examples of responsive design in a personal codebase.
+As I mentioned above in Auth, the site is styled with bootstrap so it is already responsive. Kinda cheating. Okay actually kinda fun how simple it can be. That being said, I still prefer to write my styles with custom sass in my personal projects, because idk just really nitpicky I guess, and would be happy to show you examples of responsive design in a personal codebase.
 
 ### Tags
 I utilized the boostrap-tagsinput jQuery plugin for this

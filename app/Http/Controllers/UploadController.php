@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Log;
 use Session;
+use Str;
 use Redirect;
 
 // Models
@@ -37,14 +38,16 @@ class UploadController extends Controller
         $user = \Auth::user();
 
         // Save file
+        $title = $request->get('title');
         $storage_location = Storage::putFile('media', $request->file('file'));
 
         // Save model
         $file_upload = new File([
-            'title' => $request->get('title'),
+            'title' => $title,
             'description' => $request->get('description'),
             'storage_location' => $storage_location,
             'users_id' => $user->id,
+            'slug' => Str::slug($title . ' ' . uniqid()),
         ]);
 
         if(!$file_upload->save())

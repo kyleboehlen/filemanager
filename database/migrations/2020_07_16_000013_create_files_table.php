@@ -23,6 +23,7 @@ class CreateFilesTable extends Migration
             $table->text('description');
             $table->string('storage_location');
             $table->bigInteger('users_id')->unsigned();
+            $table->string('slug')->unique();
 
             // Constraints
             $table->foreign('users_id')->references('id')->on('users');

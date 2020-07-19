@@ -43,4 +43,37 @@ class File extends Model
     {
         return $this->hasMany(Tag::class, 'files_id');
     }
+
+    public function search($term)
+    {
+        $term = strtolower($term); // Keep it case insensitive
+
+        // Search title
+        if(strpos(strtolower($this->title), $term) !== false)
+        {
+            return true;
+        }
+
+        // Search description
+        if(strpos(strtolower($this->description), $term) !== false)
+        {
+            return true;
+        }
+
+        // Serach tags
+        $tags = $this->tags->map(function($tag){
+            return strtolower($tag->value);
+        });
+
+        foreach($tags as $tag)
+        {
+            if(strpos($tag, $term) !== false)
+            {
+                return true;
+            }
+        }
+
+        // Term not found in any fields
+        return false;
+    }
 }

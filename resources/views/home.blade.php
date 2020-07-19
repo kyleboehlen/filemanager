@@ -13,6 +13,12 @@
                     <a href="{{ route('upload') }}">
                         <button type="button" class="btn btn-primary btn-lg">Upload File</button>
                     </a>
+                    <form class="float-right" action="{{ route('home') }}" method="GET">
+                        <div class="form-group">
+                            <label for="search">Search:</label>
+                            <input type="text" class="form-control" id="search" name="search" placeholder="Title, tag, description..." value="{{ $search }}">
+                        </div>
+                    </form>
                 </div>
 
                 {{-- Files List --}}

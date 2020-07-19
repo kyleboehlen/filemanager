@@ -9,7 +9,6 @@ Before installing verify your system has the following requirements:
 - git
 - composer (added to the PATH)
 - npm
-- phpunit (or just use the vendor installation)
 
 <br/>
 Start by cloning into the repository
@@ -19,7 +18,7 @@ Start by cloning into the repository
 <br/>
 Change the ownership and permissions
 
-`sudo chown -R www-data:{your_user_group} filemanager && sudo chmod -R 775 filemanger`
+`sudo chown -R www-data:{your_user_group} filemanager && sudo chmod -R 775 filemanager`
 
 <br/>
 Install the required depdendencies
@@ -85,16 +84,9 @@ Create a nysql database and create a new user to grant all privliages to the dat
 - DB_PASSWORD=
 
 <br/>
-Run the deployment for the migrations, seeds, etc.
+Run the deployment for the migrations, seeds, etc. If you have a global install of phpunit it's probably going to error out, use the Laravel install.
 
-`cd /var/www/html/filemanager && phpunit --filter Deploy`
-
-If the global install of phpunit does not work, is not installed, or throws an error use app local one
-
-`vendor/phpunit/phpunit/phpunit --filter Deploy`
-
-Or if you wanna be really big brain, just alias it
-`alias vendor_phpunit=vendor/phpunit/phpunit/phpunit && vendor_phpunit --filter Deploy`
+`cd /var/www/html/filemanager && alias vendor_phpunit=vendor/phpunit/phpunit/phpunit && vendor_phpunit --testsuite Deploy`
 
 <br/>
 Change the php.ini file to let Laravel handle file upload sizes (if desired)
@@ -120,3 +112,37 @@ Optimize route loading
    `php artisan route:cache`
 
 <br/><br/>
+
+## Notes
+
+### Requirements
+- [x] Allow uploading and persisting .jpg and .mp4 files
+- [x] Show a UI where users can upload new files, and show the list of files uploaded so far
+- [x] Provide a way to "preview" the uploaded files. For images, we want to see the image, and for mp4's, play the video
+- [x] Write basic tests for your code, and document a way to run them (see Testing)
+
+### Extra Requirements
+- [x] Add a login mechanism, and allow each user to have their own list of files (see Auth)
+- [x] Add a way to associate a title, description and tags with a file and have those changes persist.
+- [x] Allow for filtering the list of files with search terms that can match these new fields (see Tags)
+- [x] Use a responsive layout that works and looks great on desktops and mobile devices (see Responsive Design)
+- [x] Max filesize storage
+- [x] Attribution
+
+### Auth
+You'll notice this app just uses the basic Laravel auth defaults (boostrap and vue). I haven't used bootstrap before, I usually do custom sass, but I can see how it can be useful in something like this or an MVP. I'd be happy to show some custom sass in some personal codebases
+
+I'd really like to learn Vue or Angular as well, had always leaned toward Vue as it was Laravel's default, but I haven't quite had the chance yet with my personal projects.
+
+### Responsive Design
+As I mentioned above in Auth, the site is styled with bootstrap so it is already responsive. Kinda cheating. Okay actually kinda fun how simple it can be. That being said, I still prefer to write my styles with custom sass in my personal projects, because idk just really nitpicky I guess, and would be happy to show you examples of responsive design in a personal codebase.
+
+### Tags
+I utilized the boostrap-tagsinput jQuery plugin for this
+
+### Testing
+To make validation testing in the upload easier I used the trait packaged in jasonmccreary/laravel-test-assertions. Unit tests can be ran using the laravel install of phpunit using
+
+`vendor_phpunit --testsuite Unit`
+
+You did alias it... right?

@@ -39,7 +39,18 @@ class UploadController extends Controller
 
         // Save file
         $title = $request->get('title');
-        $storage_location = Storage::putFile('media', $request->file('file'));
+        $file = $request->file('file');
+        $file_size = $file->getSize();
+        
+        // Verify file doesn't max out users storage
+        $storage_left = config('accept.max_user_storage') - $user->storageUsed();
+        if($file_size > $storage_left)
+        {
+            $formated_storage_left = \formatBytes($storage_left);
+            return Redirect::back()->withErrors(["You do not have enough storage left to upload this file ($formated_storage_left bytes left)"])->withInput();
+        }
+
+        $storage_location = Storage::putFile('media', $file);
 
         // Save model
         $file_upload = new File([
@@ -48,6 +59,7 @@ class UploadController extends Controller
             'storage_location' => $storage_location,
             'users_id' => $user->id,
             'slug' => Str::slug($title . ' ' . uniqid()),
+            'size' => $file_size,
         ]);
 
         if($request->has('attr-name') && $request->has('attr-url'))

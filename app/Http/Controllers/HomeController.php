@@ -42,6 +42,10 @@ class HomeController extends Controller
             }
         }
            
-        return view('home')->with(['files' => $files, 'search' => $term]);
+        return view('home')->with([
+            'files' => $files,
+            'search' => $term,
+            'storage_left' => config('accept.max_user_storage') - $user->storageUsed(), // We could use a view composer to get this, but since user is already hydrated might as well pass it
+        ]);
     }
 }

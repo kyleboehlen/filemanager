@@ -126,7 +126,7 @@ Optimize route loading
 - [x] Add a way to associate a title, description and tags with a file and have those changes persist.
 - [x] Allow for filtering the list of files with search terms that can match these new fields (see Tags)
 - [x] Use a responsive layout that works and looks great on desktops and mobile devices (see Responsive Design)
-- [ ] Max filesize storage
+- [x] Max filesize storage
 - [x] Attribution
 
 ### Auth

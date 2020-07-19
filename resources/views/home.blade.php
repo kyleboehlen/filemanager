@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     <h2>Your Files</h2>
+                    <h4>Storage Remaining: {{ \formatBytes($storage_left) }}</h4>
                 </div>
 
                 <div class="card-body">
@@ -27,6 +28,7 @@
                         <th>Title</th>
                         <th>Date Added</th>
                         <th>File Type</th>
+                        <th>Size</th>
                     </tr>
                     @foreach($files as $file)
                         <tr>
@@ -37,6 +39,7 @@
                             </td>
                             <td>{{ $file->created_at->format('n/j/y h:i A') }}</td>
                             <td>{{ $file->fileType() }}</td>
+                            <td>{{ \formatBytes($file->size) }}</td>
                         </tr>
                     @endforeach
                 </table>

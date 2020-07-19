@@ -15,7 +15,7 @@ class File extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'description', 'storage_location', 'users_id', 'slug', 'attribution_name', 'attribution_url',
+        'title', 'description', 'storage_location', 'users_id', 'slug', 'attribution_name', 'attribution_url', 'size',
     ];
 
     /**
